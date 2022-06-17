@@ -1,24 +1,239 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Sortika.MainPage">
+<ContentPage
+    x:Class="Sortika.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TargetFrames" TargetType="Frame">
+                <Setter Property="Background" Value="{StaticResource FrameGradient}" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20">
+
+        <Grid Padding="0" ColumnDefinitions="0.2*,0.6*,0.2*">
+
+            <Image
+                Grid.Column="0"
+                Margin="-25,0,0,0"
+                HeightRequest="25"
+                HorizontalOptions="CenterAndExpand"
+                Source="menu"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label
+                Grid.Column="1"
+                FontSize="30"
+                HorizontalOptions="CenterAndExpand"
+                Style="{StaticResource LabelBold}"
+                Text="Sortika"
+                TextColor="Black"
+                VerticalOptions="CenterAndExpand" />
+
+            <StackLayout
+                Grid.Column="2"
+                Orientation="Horizontal"
+                VerticalOptions="CenterAndExpand">
+                <Image
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"
+                    Source="whatsapp"
+                    VerticalOptions="StartAndExpand" />
+                <Image
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"
+                    Source="notification"
+                    VerticalOptions="StartAndExpand" />
+            </StackLayout>
+
+
+        </Grid>
+
+        <ScrollView>
+            <StackLayout>
+
+                <!--  Start of first three frames  -->
+
+                <Frame Margin="1" CornerRadius="10">
+                    <StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+
+                            <Label
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource LabelMedium}"
+                                Text="Targets"
+                                VerticalOptions="Start" />
+
+                            <Image
+                                HeightRequest="15"
+                                HorizontalOptions="StartAndExpand"
+                                Source="question"
+                                VerticalOptions="StartAndExpand" />
+
+                        </StackLayout>
+
+
+                        <Grid ColumnDefinitions="0.33*,0.33*,0.33*" HeightRequest="100">
+
+                            <Frame Grid.Column="0" Style="{StaticResource TargetFrames}">
+
+                                <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
+                                    <Label
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource LabelRegular}"
+                                        Text="Daily"
+                                        TextColor="{StaticResource LabelInFrameLightColor}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontSize="11"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource LabelMedium}"
+                                        Text="KES 30.95"
+                                        TextColor="{StaticResource LabelInFrameDarkColor}"
+                                        VerticalOptions="Center" />
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Frame Grid.Column="1" Style="{StaticResource TargetFrames}">
+
+                                <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
+                                    <Label
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource LabelRegular}"
+                                        Text="Weekly"
+                                        TextColor="{StaticResource LabelInFrameLightColor}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontSize="11"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource LabelMedium}"
+                                        Text="KES 216.67"
+                                        TextColor="{StaticResource LabelInFrameDarkColor}"
+                                        VerticalOptions="Center" />
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Frame Grid.Column="2" Style="{StaticResource TargetFrames}">
+
+                                <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
+                                    <Label
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource LabelRegular}"
+                                        Text="Monthly"
+                                        TextColor="{StaticResource LabelInFrameLightColor}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontSize="11"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource LabelMedium}"
+                                        Text="KES 866.67"
+                                        TextColor="{StaticResource LabelInFrameDarkColor}"
+                                        VerticalOptions="Center" />
+                                </StackLayout>
+
+                            </Frame>
+
+                        </Grid>
+
+
+                    </StackLayout>
+                </Frame>
+
+                <!--  End of first three frames  -->
+
+
+
+
+                <!--  Start of Loans and Loan limits  -->
+
+                <Grid ColumnDefinitions="0.5*,0.5*">
+
+                    <Frame
+                        Grid.Column="0"
+                        Margin="1"
+                        CornerRadius="10">
+
+                        <StackLayout>
+
+                            <Label HorizontalOptions="Center" Text="Account Balance" />
+
+                            <Label HorizontalOptions="Center" Text="KES 0.00" />
+
+                            <Button HorizontalOptions="Center" Text="Start Saving" />
+
+                        </StackLayout>
+
+                    </Frame>
+
+                    <Frame
+                        Grid.Column="1"
+                        Margin="1"
+                        CornerRadius="10">
+
+                        <StackLayout HorizontalOptions="FillAndExpand">
+
+                            <Label HorizontalOptions="Center" Text="Loan Limits" />
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label HorizontalOptions="Start" Text="Borrow" />
+                                <Label HorizontalOptions="End" Text="KES 0.00" />
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label HorizontalOptions="Start" Text="Borrow" />
+                                <Label HorizontalOptions="End" Text="KES 0.00" />
+                            </StackLayout>
+
+
+
+                            <Button HorizontalOptions="Center" Text="Save to increase Limits" />
+
+                        </StackLayout>
+
+                    </Frame>
+
+                </Grid>
+
+
+                <!--  End of Loans and Loan limits  -->
+
+
+
+                <!--  Start of Investment chart  -->
+
+                <Frame
+                    Margin="1"
+                    CornerRadius="10"
+                    HeightRequest="250">
+
+                    <StackLayout>
+
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="Investment"
+                            VerticalOptions="Start" />
+
+
+
+                    </StackLayout>
+
+                </Frame>
+
+                <!--  End of Investment chart  -->
+
+            </StackLayout>
+        </ScrollView>
+
     </StackLayout>
 
 </ContentPage>

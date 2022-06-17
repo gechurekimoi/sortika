@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="Sortika.Styles.ColorStyles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Primary">#231E60</Color>
+    <Color x:Key="Secondary">#703D74</Color>
+    <Color x:Key="EntryPlaceholderColor">#A0FFFFFF</Color>
+    <Color x:Key="GradientStartColor">#012E8B</Color>
+    <Color x:Key="GradientEndColor">#3F0041</Color>
+    <Color x:Key="GradientStart">#713d74</Color>
+    <Color x:Key="GradientEnd">#221e60</Color>
+    <Color x:Key="TwitterBlue">#55acee</Color>
+    <Color x:Key="Red">#dc4e41</Color>
+    <Color x:Key="FacebookBlue">#4267B2</Color>
+    <Color x:Key="LightGreen">#35c659</Color>
+    <Color x:Key="FacebookLogin">#3b5998</Color>
+    <Color x:Key="Transparent">Transparent</Color>
+    <Color x:Key="Link">#567cd7</Color>
+    <Color x:Key="Steel">#788396</Color>
+    <Color x:Key="Gold">#fcbc0f</Color>
+    <Color x:Key="Dull-Red">#c04848</Color>
+    <Color x:Key="Deep-Purple">#480048</Color>
+    <Color x:Key="Green">#7ed321</Color>
+    <Color x:Key="SuccessfulGreen">#0DBC1F</Color>
+    <Color x:Key="Liliac">#d483fc</Color>
+    <Color x:Key="Purpleish-Blue">#5d4cf7</Color>
+    <Color x:Key="Bright-Cyan">#3cdeff</Color>
+    <Color x:Key="Lemon-Lime">#bdff27</Color>
+    <Color x:Key="VioletGradientStart">#373668</Color>
+    <Color x:Key="VioletGradientEnd">#24243b</Color>
+    <Color x:Key="PinkGradientStart">#d54381</Color>
+    <Color x:Key="PinkGradientEnd">#7644ad</Color>
+    <Color x:Key="ContentPageBackground">#F6F7F9</Color>
+    <Color x:Key="LabelDefaultColor">darkgray</Color>
+    <Color x:Key="LabelInFrameLightColor">#bdadd1</Color>
+    <Color x:Key="LabelInFrameDarkColor">#957aa9</Color>
+
+
+    <LinearGradientBrush x:Key="VioletGradient" EndPoint="1,1">
+        <GradientStop Offset="0.1" Color="#713d74" />
+        <GradientStop Offset="1.0" Color="#221e60" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ProceedButtonGradient" EndPoint="1,0">
+        <GradientStop Offset="0.1" Color="#F44E5F" />
+        <GradientStop Offset="1.0" Color="#E73F92" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="FrameGradient" EndPoint="1,0">
+        <GradientStop Offset="0.1" Color="#f9efff" />
+        <GradientStop Offset="1.0" Color="#e1d6ff" />
+    </LinearGradientBrush>
+
+
+
+</ResourceDictionary>

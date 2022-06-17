@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="Sortika.Styles.LabelStyles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:styles="clr-namespace:Sortika.Styles">
+
+    <ResourceDictionary.MergedDictionaries>
+        <styles:ColorStyles />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BaseLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource LabelDefaultColor}" />
+    </Style>
+
+
+    <Style
+        x:Key="LabelRegular"
+        BasedOn="{StaticResource BaseLabel}"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratRegular" />
+    </Style>
+
+    <Style
+        x:Key="LabelMedium"
+        BasedOn="{StaticResource BaseLabel}"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratMedium" />
+    </Style>
+
+    <Style
+        x:Key="LabelBold"
+        BasedOn="{StaticResource BaseLabel}"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratBold" />
+    </Style>
+
+    <Style
+        x:Key="LabelSemiBold"
+        BasedOn="{StaticResource BaseLabel}"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratSemiBold" />
+    </Style>
+
+    <Style
+        x:Key="FormLabel"
+        BasedOn="{StaticResource LabelMedium}"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource LabelDefaultColor}" />
+    </Style>
+
+
+</ResourceDictionary>
