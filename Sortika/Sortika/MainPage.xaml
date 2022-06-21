@@ -2,16 +2,39 @@
 <ContentPage
     x:Class="Sortika.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms">
 
     <ContentPage.Resources>
         <ResourceDictionary>
+
             <Style x:Key="TargetFrames" TargetType="Frame">
                 <Setter Property="Background" Value="{StaticResource FrameGradient}" />
                 <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Margin" Value="2.5,0,2.5,0" />
+                <Setter Property="Padding" Value="0,0,0,0" />
             </Style>
+
+            <Style x:Key="ContentFrames" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <chart:ChartColorCollection x:Key="MyColors">
+                <Color>#0fd69d</Color>
+                <Color>#957aa9</Color>
+                <Color>Orange</Color>
+                <Color>lightBlue</Color>
+                <Color>purple</Color>
+            </chart:ChartColorCollection>
+
+
+
         </ResourceDictionary>
+
     </ContentPage.Resources>
 
     <StackLayout Padding="20">
@@ -59,7 +82,7 @@
 
                 <!--  Start of first three frames  -->
 
-                <Frame Margin="1" CornerRadius="10">
+                <Frame Style="{StaticResource ContentFrames}">
                     <StackLayout>
 
                         <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
@@ -155,48 +178,92 @@
 
 
 
-                <!--  Start of Loans and Loan limits  -->
+                <!--  Start of Account Balance and Loan limits  -->
 
                 <Grid ColumnDefinitions="0.5*,0.5*">
 
-                    <Frame
-                        Grid.Column="0"
-                        Margin="1"
-                        CornerRadius="10">
+                    <Frame Grid.Column="0" Style="{StaticResource ContentFrames}">
 
                         <StackLayout>
 
-                            <Label HorizontalOptions="Center" Text="Account Balance" />
+                            <Label
+                                HorizontalOptions="Center"
+                                Style="{StaticResource LabelSemiBold}"
+                                Text="Account Balance" />
 
-                            <Label HorizontalOptions="Center" Text="KES 0.00" />
+                            <Label
+                                HorizontalOptions="Center"
+                                Style="{StaticResource LabelRegular}"
+                                Text="KES 0.00"
+                                VerticalOptions="CenterAndExpand" />
 
-                            <Button HorizontalOptions="Center" Text="Start Saving" />
+                            <Button
+                                Padding="10,1,10,1"
+                                BackgroundColor="#0fd69d"
+                                CornerRadius="10"
+                                FontFamily="MontserratMedium"
+                                FontSize="14"
+                                HeightRequest="35"
+                                HorizontalOptions="Center"
+                                Text="Start Saving"
+                                TextColor="White"
+                                TextTransform="None"
+                                VerticalOptions="StartAndExpand" />
 
                         </StackLayout>
 
                     </Frame>
 
-                    <Frame
-                        Grid.Column="1"
-                        Margin="1"
-                        CornerRadius="10">
+                    <Frame Grid.Column="1" Style="{StaticResource ContentFrames}">
 
                         <StackLayout HorizontalOptions="FillAndExpand">
 
-                            <Label HorizontalOptions="Center" Text="Loan Limits" />
+                            <Label
+                                HorizontalOptions="Center"
+                                Style="{StaticResource LabelSemiBold}"
+                                Text="Loan Limits" />
 
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label HorizontalOptions="Start" Text="Borrow" />
-                                <Label HorizontalOptions="End" Text="KES 0.00" />
+                                <Label
+                                    FontSize="13"
+                                    HorizontalOptions="StartAndExpand"
+                                    Style="{StaticResource LabelMedium}"
+                                    Text="Borrow"
+                                    TextColor="Black" />
+                                <Label
+                                    FontSize="13"
+                                    HorizontalOptions="EndAndExpand"
+                                    Style="{StaticResource LabelRegular}"
+                                    Text="KES 0.00" />
                             </StackLayout>
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label HorizontalOptions="Start" Text="Borrow" />
-                                <Label HorizontalOptions="End" Text="KES 0.00" />
+                                <Label
+                                    FontSize="13"
+                                    HorizontalOptions="StartAndExpand"
+                                    Style="{StaticResource LabelMedium}"
+                                    Text="Lend"
+                                    TextColor="Black" />
+
+                                <Label
+                                    FontSize="13"
+                                    HorizontalOptions="EndAndExpand"
+                                    Style="{StaticResource LabelRegular}"
+                                    Text="KES 0.00" />
                             </StackLayout>
 
 
 
-                            <Button HorizontalOptions="Center" Text="Save to increase Limits" />
+                            <Button
+                                Background="{StaticResource FrameGradient}"
+                                CornerRadius="10"
+                                FontFamily="MontserratMedium"
+                                FontSize="11"
+                                HeightRequest="35"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Save to increase Limits"
+                                TextColor="{StaticResource LabelInFrameDarkColor}"
+                                TextTransform="None"
+                                VerticalOptions="StartAndExpand" />
 
                         </StackLayout>
 
@@ -211,17 +278,88 @@
 
                 <!--  Start of Investment chart  -->
 
-                <Frame
-                    Margin="1"
-                    CornerRadius="10"
-                    HeightRequest="250">
+                <Frame HeightRequest="250" Style="{StaticResource ContentFrames}">
 
                     <StackLayout>
 
                         <Label
                             HorizontalOptions="Center"
+                            Style="{StaticResource LabelSemiBold}"
                             Text="Investment"
                             VerticalOptions="Start" />
+
+                        <chart:SfChart
+                            HeightRequest="200"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="StartAndExpand">
+
+                            <chart:SfChart.Legend>
+
+                                <chart:ChartLegend CornerRadius="10" DockPosition="Right">
+                                    <chart:ChartLegend.LabelStyle />
+                                </chart:ChartLegend>
+
+                            </chart:SfChart.Legend>
+
+
+
+                            <chart:SfChart.PrimaryAxis>
+
+                                <chart:CategoryAxis>
+
+                                    <chart:CategoryAxis.Title>
+
+                                        <chart:ChartAxisTitle Text="Name" />
+
+                                    </chart:CategoryAxis.Title>
+
+                                </chart:CategoryAxis>
+
+                            </chart:SfChart.PrimaryAxis>
+
+                            <chart:SfChart.SecondaryAxis>
+
+                                <chart:NumericalAxis>
+
+                                    <chart:NumericalAxis.Title>
+
+                                        <chart:ChartAxisTitle Text="Height (in cm)" />
+
+                                    </chart:NumericalAxis.Title>
+
+                                </chart:NumericalAxis>
+
+                            </chart:SfChart.SecondaryAxis>
+
+                            <chart:SfChart.Series>
+
+                                <chart:DoughnutSeries
+                                    CircularCoefficient="1"
+                                    DoughnutCoefficient="0.5"
+                                    ItemsSource="{Binding ChartData}"
+                                    XBindingPath="Description"
+                                    YBindingPath="Amount">
+                                    <chart:DoughnutSeries.DataMarker>
+                                        <chart:ChartDataMarker>
+                                            <chart:ChartDataMarker.LabelStyle>
+                                                <chart:DataMarkerLabelStyle LabelFormat="" LabelPosition="Center" />
+                                            </chart:ChartDataMarker.LabelStyle>
+                                        </chart:ChartDataMarker>
+                                    </chart:DoughnutSeries.DataMarker>
+
+
+                                    <chart:DoughnutSeries.ColorModel>
+                                        <chart:ChartColorModel CustomBrushes="{StaticResource MyColors}" Palette="Custom" />
+                                    </chart:DoughnutSeries.ColorModel>
+
+                                </chart:DoughnutSeries>
+
+
+                            </chart:SfChart.Series>
+
+
+
+                        </chart:SfChart>
 
 
 

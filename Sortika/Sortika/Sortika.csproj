@@ -30,6 +30,7 @@
     <PackageReference Include="Syncfusion.Licensing" Version="19.2.0.44" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.2.0.44" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.2.0.44" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="19.2.0.44" />
     <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="19.2.0.44" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
